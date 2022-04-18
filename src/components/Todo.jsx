@@ -3,11 +3,11 @@ import React from 'react'
 import Delete from './Delete.js'
 export default function Todo({ todo, id, deleteTodo }) {
 
-  console.log(id)
+  // console.log(id)
   return (
     <div>
 
-      <h1>{todo.title}</h1> <span><Delete deleteTodo={deleteTodo} /></span>
+      <h1>{todo.title}</h1> <span><Delete deleteTodo={deleteTodo} id={id} /></span>
     </div>
   )
 }

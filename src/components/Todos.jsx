@@ -19,7 +19,7 @@ export default function Todos() {
     }, []);
 
 
-    const deleteTodo = ({ id }) => {
+    const deleteTodo = (id) => {
 
         const filtered = todos.filter(td => td.id !== id)
 
