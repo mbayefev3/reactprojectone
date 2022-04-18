@@ -1,10 +1,13 @@
 import React from 'react'
 
-const Delete = () => {
+const Delete = ({ deleteTodo, id }) => {
 
     return (
         <div>
-            <button>delete</button>
+            <button onClick={() => {
+                deleteTodo(id)
+            }}>delete</button>
+
         </div>
     )
 }

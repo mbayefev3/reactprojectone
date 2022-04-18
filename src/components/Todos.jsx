@@ -10,19 +10,29 @@ export default function Todos() {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(data => data.json()
                 .then(todos => {
-                    console.log(todos)
+                    // console.log(todos)
                     setTodos(todos)
                 })
             )
 
 
     }, []);
+
+
+    const deleteTodo = (id) => {
+
+        const filtered = todos.filter(td => td.id !== id)
+
+        setTodos([
+            ...filtered
+        ])
+    }
     return <div>
 
         {todos.map(todo => {
             return (
                 <div className="alltodos">
-                    <Todo todo={todo} id={todo.id} />
+                    <Todo todo={todo} id={todo.id} deleteTodo={deleteTodo} />
                 </div>
             )
         })}
