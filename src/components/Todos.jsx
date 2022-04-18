@@ -23,7 +23,6 @@ export default function Todos() {
 
         const filtered = todos.filter(td => td.id !== id)
 
-        console.log('ffff', filtered)
         setTodos([
             ...filtered
         ])
