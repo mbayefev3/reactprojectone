@@ -10,7 +10,7 @@ export default function Todos() {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(data => data.json()
                 .then(todos => {
-                    // console.log(todos)
+                    console.log(todos)
                     setTodos(todos)
                 })
             )
@@ -32,7 +32,7 @@ export default function Todos() {
         {todos.map(todo => {
             return (
                 <div className="alltodos">
-                    <Todo todo={todo} id={todo.id} deleteTodo={deleteTodo} />
+                    <Todo todo={todo} id={todo.id} deleteTodo={deleteTodo} completed={todo.completed} />
                 </div>
             )
         })}
