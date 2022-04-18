@@ -10,29 +10,26 @@ export default function Todos() {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(data => data.json()
                 .then(todos => {
-<<<<<<< HEAD
                     console.log(todos)
                     setTodos(todos)
-=======
-                    var lastdodos=[]
+                    var lastdodos = []
                     for (let index = 0; index < 15; index++) {
                         const element = todos[index];
                         lastdodos.push(element)
-                        
-                    }
-            
-                   setTodos(lastdodos)
 
->>>>>>> master
+                    }
+
+                    setTodos(lastdodos)
+
                 })
             )
 
 
     }, []);
 
-    useEffect(()=>{
-      
-    },[])
+    useEffect(() => {
+
+    }, [])
 
 
     const deleteTodo = (id) => {
@@ -45,21 +42,23 @@ export default function Todos() {
     }
 
 
-    const AddTodos =(title )=>{
-        const id =  Math.floor(Math.random() * 100)        ;
-        const completed=false ;
-        const userId =  Math.floor(Math.random() * 100)  ;
+    const AddTodos = (title) => {
+        const id = Math.floor(Math.random() * 100);
+        const completed = false;
+        const userId = Math.floor(Math.random() * 100);
 
-        const newTodos = [...todos, {  title ,
+        const newTodos = [...todos, {
+            title,
             completed,
             userId,
-            userId }];
+            userId
+        }];
 
-            setTodos(newTodos)
+        setTodos(newTodos)
 
     }
     return <div>
-   <Addtodo   AddTodos={AddTodos}/>
+        <Addtodo AddTodos={AddTodos} />
 
         {todos.map(todo => {
             return (
