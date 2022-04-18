@@ -1,20 +1,11 @@
-import React, { Component } from 'react'
-import Title from './components/Header'
+import React from 'react'
+import Todos from './components/Todos'
+export default function App() {
+  return (
+    <div>
+     <h1>Todos Apps</h1>
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-
-    return (
-      <div>
-        <Title />
-      </div>
-    )
-  }
+     <Todos / >
+    </div>
+  )
 }
-
-export default App
