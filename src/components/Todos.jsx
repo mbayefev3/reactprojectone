@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Todo from "./Todo";
 // import './todos.css'
-
+import Addtodo from "./Addtodo";
 
 export default function Todos() {
     const [todos, setTodos] = useState([]);
@@ -10,13 +10,24 @@ export default function Todos() {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(data => data.json()
                 .then(todos => {
-                    // console.log(todos)
-                    setTodos(todos)
+                    var lastdodos=[]
+                    for (let index = 0; index < 15; index++) {
+                        const element = todos[index];
+                        lastdodos.push(element)
+                        
+                    }
+            
+                   setTodos(lastdodos)
+
                 })
             )
 
 
     }, []);
+
+    useEffect(()=>{
+      
+    },[])
 
 
     const deleteTodo = (id) => {
@@ -27,7 +38,23 @@ export default function Todos() {
             ...filtered
         ])
     }
+
+
+    const AddTodos =(title )=>{
+        const id =  Math.floor(Math.random() * 100)        ;
+        const completed=false ;
+        const userId =  Math.floor(Math.random() * 100)  ;
+
+        const newTodos = [...todos, {  title ,
+            completed,
+            userId,
+            userId }];
+
+            setTodos(newTodos)
+
+    }
     return <div>
+   <Addtodo   AddTodos={AddTodos}/>
 
         {todos.map(todo => {
             return (
