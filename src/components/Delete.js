@@ -5,6 +5,7 @@ const Delete = () => {
     return (
         <div>
             <button>delete</button>
+
         </div>
     )
 }
