@@ -1,10 +1,13 @@
 import React from 'react'
-import './todos.css'
-export default function Todo({todo}) {
+// import './todos.css'
+import Delete from './Delete.js'
+export default function Todo({ todo, id }) {
+
+  console.log(id)
   return (
     <div>
 
-        <h1>{todo.title}</h1>
+      <h1>{todo.title}</h1> <span><Delete /></span>
     </div>
   )
 }
